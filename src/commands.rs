@@ -29,3 +29,9 @@ pub fn list() {
         println!("{}: {}", todo.id, todo.task);
     }
 }
+
+pub fn remove(id: u32) {
+    let mut todos = read_todos();
+    todos.retain(|todo| todo.id != id);
+    write_todos(&todos);
+}
