@@ -16,3 +16,16 @@ pub fn add(task: &str) {
 
     println!("Added: \"{}\"", task);
 }
+
+pub fn list() {
+    let todos = read_todos();
+
+    if todos.is_empty() {
+        println!("No tasks found.");
+        return;
+    }
+
+    for todo in &todos {
+        println!("{}: {}", todo.id, todo.task);
+    }
+}

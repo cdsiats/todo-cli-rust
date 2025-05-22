@@ -15,7 +15,8 @@ struct Cli {
 enum Commands {
     Add {
         task: String,
-    }
+    },
+    List
 }
 
 fn main() {
@@ -23,5 +24,6 @@ fn main() {
 
     match &cli.command  {
         Commands::Add { task } => commands::add(task),
+        Commands::List => commands::list(),
     }
 }
